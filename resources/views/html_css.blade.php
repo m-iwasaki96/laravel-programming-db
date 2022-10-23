@@ -12,7 +12,7 @@
     <header>
         <div id="navi">
             <div id="title">
-                <h1><a href="#">プログラミングDB</a> </h1>
+                <h1><a href="{{ route('top') }}">プログラミングDB</a> </h1>
             </div>
             <div id="user">
                 <a href="#" id="user-name">ユーザー名</a>
@@ -23,7 +23,7 @@
     <main>
         <div id="main-content">
             <aside>
-                <a href="" class="btn">登録</a>
+                <a href="{{ route('items.create') }}" class="btn">登録</a>
                 <a href="" class="btn">検索</a>
             </aside>
             <section>
@@ -38,6 +38,15 @@
                             <p>{{ $item->content }}</p>
                             <p class="url">参考URL</p>
                             <p>{{ $item->url }}</p>
+                            <div>
+                                <a href="{{ route('items.show', $item) }}" class="button">詳細</a>
+                                <a href="{{ route('items.edit', $item) }}" class="button">編集</a>
+                                <form action="{{ route('items.destroy', $item) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="button">削除</button>
+                                </form>
+                            </div>
                         </div>
                         <!-- <div class="contents">
                             <p class="topic-title">タイトル</p>

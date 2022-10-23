@@ -21,9 +21,12 @@
     </header>
 
     <main>
+        @if (session('flash_message'))
+            <p>{{ session('flash_message') }}</p>
+        @endif
         <div id="main-content">
             <aside>
-                <a href="" class="btn">登録</a>
+                <a href="{{ route('items.create') }}" class="btn">登録</a>
                 <a href="" class="btn">検索</a>
             </aside>
             <section id="top-section">

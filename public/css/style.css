@@ -53,6 +53,9 @@ aside {
     padding: 16px;
     width: 90%;
 }
+#register-section {
+    padding: 16px;
+}
 .btn {
     display: block;
     font-size: 20px;
@@ -76,9 +79,17 @@ h2 {
 p:not([class]) {
     margin-bottom: 5px;
 }
+/* 入力フォーム */
+.input-area {
+    border: 1px solid black;
+}
 /* 各言語ページ */
 #language-title {
     padding-top: 16px;
+}
+.button {
+    border: 1px solid black;
+    padding: 5px;
 }
 
 /* 各項目ページ */
