@@ -12,7 +12,7 @@
     <header>
         <div id="navi">
             <div id="title">
-                <h1><a href="{{ route('top') }}">プログラミングDB</a> </h1>
+                <h1><a href="{{ route('items.index') }}">プログラミングDB</a> </h1>
             </div>
             <div id="user">
                 <a href="#" id="user-name">ユーザー名</a>
@@ -66,7 +66,7 @@
                         </div> -->
                     </div>
                     @endforeach
-                    <div class="topics">
+                    <!-- <div class="topics">
                         <div class="contents">
                             <p class="topic-title">タイトル</p>
                             <p>ダミーテキスト。</p>
@@ -116,8 +116,8 @@
                             <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
                             <p class="url">参考URL</p>
                             <p>https://www.ダミーURL.com</p>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
                 </div>
             </section>
         </div>

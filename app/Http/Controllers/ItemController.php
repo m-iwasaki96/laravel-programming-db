@@ -15,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return view('items.index');
     }
 
     /**
@@ -36,6 +36,12 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
+        $request->validate([
+            'title' => 'required', 
+            'content' => 'required', 
+            'user_id' => 'required', 
+        ]);
+
         $item = new Item();
         $item->title = $request->input('title');
         $item->content = $request->input('content');
@@ -44,7 +50,7 @@ class ItemController extends Controller
         $item->language = $request->input('language');
         $item->save();
 
-        return redirect()->route('top')->with('flash_message', '登録が完了しました。');
+        return redirect()->route('items.index')->with('flash_message', '登録が完了しました。');
     }
 
     /**
@@ -78,6 +84,12 @@ class ItemController extends Controller
      */
     public function update(UpdateItemRequest $request, Item $item)
     {
+        $request->validate([
+            'title' => 'required', 
+            'content' => 'required', 
+            'user_id' => 'required', 
+        ]);
+        
         $item->title = $request->input('title');
         $item->content = $request->input('content');
         $item->url = $request->input('url');

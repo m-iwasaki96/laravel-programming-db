@@ -16,7 +16,8 @@ use App\Http\Controllers\ItemController;
 */
 
 
-Route::get('/', [TopController::class, 'index'])->name('top');
+// Route::get('/', [TopController::class, 'index'])->name('top');
+Route::get('/items', [ItemController::class, 'index'])->name('items.index');
 
 Route::get('/html_css', [TopController::class, 'html_css'])->name('html_css');
 

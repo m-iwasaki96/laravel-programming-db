@@ -12,7 +12,7 @@
     <header>
         <div id="navi">
             <div id="title">
-                <h1><a href="{{ route('top') }}">プログラミングDB</a> </h1>
+                <h1><a href="{{ route('items.index') }}">プログラミングDB</a> </h1>
             </div>
             <div id="user">
                 <a href="#" id="user-name">ユーザー名</a>
@@ -33,7 +33,7 @@
             <section>
                 <h2>詳細</h2>
                 <div>
-                    <h2>{{ $item->title }}</h2>
+                    <h3>{{ $item->title }}</h3>
                     <p>{{ $item->content }}</p>
                     <p>{{ $item->url }}</p>
                     <p>{{ $item->user_id }}</p>
@@ -46,7 +46,7 @@
                         @method('delete')
                         <button type="submit" class="button">削除</button>
                     </form>
-                    <a href="{{ route('top') }}">&lt; 戻る</a>
+                    <a href="{{ route('items.index') }}">&lt; 戻る</a>
                 </div>
             </section>
         </div>

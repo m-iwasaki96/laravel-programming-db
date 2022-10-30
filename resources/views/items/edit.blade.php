@@ -28,16 +28,25 @@
             </aside>
             <section id="register-section">
                 <h1>編集</h1>
+                @if ($errors->any())
+                    <div>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('items.update', $item) }}" method="post">
                     @csrf
                     @method('patch')
                     <div>
                         <label for="title">タイトル</label>
-                        <input type="text" name="title" class="input-area" value="{{ $item->title }}">
+                        <input type="text" name="title" class="input-area" value="{{ old('title', $item->title) }}">
                     </div>
                     <div>
                         <label for="content">内容</label>
-                        <textarea name="content" cols="50" rows="10" class="input-area">{{ $item->content }}</textarea>
+                        <textarea name="content" cols="50" rows="10" class="input-area">{{ old('content', $item->content) }}</textarea>
                     </div>
                     <div>
                         <label for="url">参考URL</label>
@@ -45,7 +54,7 @@
                     </div>
                     <div>
                         <label for="user_id">ユーザーID</label>
-                        <input type="text" name="user_id" class="input-area" value="{{ $item->user_id }}">
+                        <input type="text" name="user_id" class="input-area" value="{{ old('user_id', $item->user_id) }}">
                     </div>
                     <div>
                         <label for="language">言語(カテゴリ)</label>
