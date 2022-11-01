@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CategoryController;
+use Database\Seeders\CategorySeeder;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,6 @@ use App\Http\Controllers\ItemController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 // Route::get('/', [TopController::class, 'index'])->name('top');
 Route::get('/items', [ItemController::class, 'index'])->name('items.index');
@@ -34,3 +35,16 @@ Route::get('items/{item}/edit', [ItemController::class, 'edit'])->name('items.ed
 Route::patch('items/{item}', [ItemController::class, 'update'])->name('items.update');
 
 Route::delete('items/{item}', [ItemController::class, 'destroy'])->name('items.destroy');
+
+// カテゴリごとの表示のルーティング
+Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';

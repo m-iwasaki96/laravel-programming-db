@@ -27,7 +27,7 @@
                 <a href="" class="btn">検索</a>
             </aside>
             <section>
-                <a href="#"><h2 id="language-title">HTML/CSS</h2></a>
+                <a href="#"><h2 id="language-title">{{ strtoupper($id) }}</h2></a>
                 <div id="main-items">
                     @foreach ($items as $item)
                     <div class="topics">
@@ -48,76 +48,8 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div> -->
                     </div>
                     @endforeach
-                    <!-- <div class="topics">
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                    </div>
-                    <div class="topics">
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div>
-                        <div class="contents">
-                            <p class="topic-title">タイトル</p>
-                            <p>ダミーテキスト。</p>
-                            <p class="content-body">内容</p>
-                            <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                            <p class="url">参考URL</p>
-                            <p>https://www.ダミーURL.com</p>
-                        </div> -->
-                    <!-- </div> -->
                 </div>
             </section>
         </div>
