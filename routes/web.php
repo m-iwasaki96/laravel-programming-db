@@ -48,7 +48,7 @@ Route::get('/login2', [TopController::class, 'index'])->name('login2');
 Route::get('/register2', [TopController::class, 'register'])->name('register2');
 
 // 検索画面のルーティング
-Route::get('/items/search', [TopController::class, 'search'])->name('items.search');
+Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');
 
 
 // Route::get('/', function () {
