@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プログラミングDBシステム</title>
+    <title>検索</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('/css/style.css')  }}">
 </head>
@@ -27,7 +27,7 @@
                 <a href="" class="btn">検索</a>
             </aside>
             <section id="register-section">
-                <h1>編集</h1>
+                <h1>キーワード検索</h1>
                 @if ($errors->any())
                     <div>
                         <ul>
@@ -37,30 +37,29 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('items.update', $item) }}" method="post">
+                <form action="{{ route('items.store') }}" method="get">
                     @csrf
-                    @method('patch')
                     <div>
                         <label for="title">タイトル</label>
-                        <input type="text" name="title" class="input-area" value="{{ old('title', $item->title) }}">
+                        <input type="text" name="title" class="input-area" value="{{ old('title') }}">
                     </div>
                     <div>
                         <label for="content">内容</label>
-                        <textarea name="content" cols="50" rows="10" class="input-area">{{ old('content', $item->content) }}</textarea>
+                        <textarea name="content" cols="50" rows="10" class="input-area">{{ old('content') }}</textarea>
                     </div>
                     <div>
                         <label for="url">参考URL</label>
-                        <input type="text" name="url" class="input-area" value="{{ $item->url }}">
+                        <input type="text" name="url" class="input-area">
                     </div>
                     <div>
                         <label for="user_id">ユーザーID</label>
-                        <input type="text" name="user_id" class="input-area" value="{{ old('user_id', $item->user_id) }}">
+                        <input type="text" name="user_id" class="input-area" value="{{ old('user_id') }}">
                     </div>
                     <div>
                         <label for="language">言語(カテゴリ)</label>
-                        <input type="text" name="language" class="input-area" value="{{ $item->language }}">
+                        <input type="text" name="language" class="input-area">
                     </div>
-                    <button type="submit">更新</button>
+                    <button type="submit">検索</button>
                 </form>
             </section>
         </div>

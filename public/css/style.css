@@ -100,3 +100,34 @@ p:not([class]) {
 .content-aside {
     height: 100vh;
 }
+
+/* ログインフォーム */
+#login {
+    width: 500px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 70px auto;
+    padding: 50px 100px;
+    background-color: #2a3644;
+    color: #f4f4f4;
+    border-radius: 6px;
+}
+#login > h1 {
+    margin-bottom: 20px;
+}
+input {
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 30px;
+}
+button {
+    border: 1px solid black;
+    border-radius: 6px;
+    color: black;
+    background-color: #BFF4F5;
+    width: 100px;
+    height: 35px;
+    margin-top: 10px;
+}

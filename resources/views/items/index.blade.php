@@ -24,14 +24,14 @@
         <div id="main-content">
             <aside>
                 <a href="{{ route('items.create') }}" class="btn">登録</a>
-                <a href="" class="btn">検索</a>
+                <a href="{{ route('items.search') }}" class="btn">検索</a>
             </aside>
             <section id="top-section">
             @if (session('flash_message'))
                 <p>{{ session('flash_message') }}</p>
             @endif
                 <div class="topics">
-                    <a href="{{ route('html_css') }}"><h2>HTML/CSS</h2></a> 
+                    <a href="{{ route('categories.show', ['category' => 'html_css']) }}"><h2>HTML/CSS</h2></a> 
                     <div class="contents">
                         <p class="topic-title">タイトル</p>
                         <p>ダミーテキスト。</p>

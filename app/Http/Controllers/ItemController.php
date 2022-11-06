@@ -112,4 +112,9 @@ class ItemController extends Controller
 
         return redirect()->route('top')->with('flash_message', '削除が完了しました。');
     }
+
+    public function search() {
+        return view('items.search');
+    }
+
 }

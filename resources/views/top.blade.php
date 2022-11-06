@@ -12,7 +12,7 @@
     <header>
         <div id="navi">
             <div id="title">
-                <h1><a href="{{ route('top') }}">プログラミングDB</a> </h1>
+                <h1><a href="{{ route('items.index') }}">プログラミングDB</a> </h1>
             </div>
             <div id="user">
                 <a href="#" id="user-name">ユーザー名</a>

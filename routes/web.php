@@ -18,6 +18,8 @@ use Database\Seeders\CategorySeeder;
 */
 
 // Route::get('/', [TopController::class, 'index'])->name('top');
+Route::get('/', [ItemController::class, 'index'])->name('items.index');
+
 Route::get('/items', [ItemController::class, 'index'])->name('items.index');
 
 Route::get('/html_css', [TopController::class, 'html_css'])->name('html_css');
@@ -39,9 +41,19 @@ Route::delete('items/{item}', [ItemController::class, 'destroy'])->name('items.d
 // カテゴリごとの表示のルーティング
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ログイン画面のルーティング
+Route::get('/login2', [TopController::class, 'index'])->name('login2');
+
+// ユーザー登録画面のルーティング
+Route::get('/register2', [TopController::class, 'register'])->name('register2');
+
+// 検索画面のルーティング
+Route::get('/items/search', [TopController::class, 'search'])->name('items.search');
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
