@@ -24,7 +24,7 @@
         <div id="main-content">
             <aside>
                 <a href="{{ route('items.create') }}" class="btn">登録</a>
-                <a href="" class="btn">検索</a>
+                <a href="{{ route('items.search') }}" class="btn">検索</a>
             </aside>
             <section id="register-section">
                 <h1>新規登録</h1>
