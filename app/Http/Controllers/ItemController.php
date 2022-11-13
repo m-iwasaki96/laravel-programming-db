@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Models\Item;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
@@ -35,6 +35,9 @@ class ItemController extends Controller
         if ($request->filled('category')) {
             $item = $item->where('category', $request->input('category'));
         }
+
+        $items = $item->get();
+        return view('/items.search', ['items' => $items, 'request' => $request]);
     }
 
     /**
@@ -132,8 +135,8 @@ class ItemController extends Controller
         return redirect()->route('top')->with('flash_message', '削除が完了しました。');
     }
 
-    public function search_view() {
-        return view('items.search');
+    public function search_view(Request $request) {
+        return view('items.search', compact('items'));
     }
 
 }

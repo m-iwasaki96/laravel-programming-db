@@ -24,7 +24,7 @@
         <div id="main-content">
             <aside>
                 <a href="{{ route('items.create') }}" class="btn">登録</a>
-                <a href="{{ route('items.search_view') }}" class="btn">検索</a>
+                <a href="{{ route('items.search') }}" class="btn">検索</a>
             </aside>
             <section id="register-section">
                 <h1>キーワード検索</h1>
@@ -37,30 +37,35 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('items.store') }}" method="get">
+                <form action="{{ route('items.search') }}">
                     @csrf
                     <div>
                         <label for="title">タイトル</label>
-                        <input type="text" name="title" class="input-area" value="{{ old('title') }}">
+                        <input type="text" name="title" class="input-area" value="{{ $request->input('title') }}">
                     </div>
                     <div>
                         <label for="content">内容</label>
-                        <textarea name="content" cols="50" rows="10" class="input-area">{{ old('content') }}</textarea>
+                        <textarea name="content" cols="50" rows="10" class="input-area" value="{{ $request->input('content') }}"></textarea>
                     </div>
                     <div>
                         <label for="url">参考URL</label>
-                        <input type="text" name="url" class="input-area">
+                        <input type="text" name="url" class="input-area" value="{{ $request->input('url') }}">
                     </div>
                     <div>
                         <label for="user_id">ユーザーID</label>
-                        <input type="text" name="user_id" class="input-area" value="{{ old('user_id') }}">
+                        <input type="text" name="user_id" class="input-area" value="{{ $request->input('user_id') }}">
                     </div>
                     <div>
                         <label for="language">言語(カテゴリ)</label>
-                        <input type="text" name="language" class="input-area">
+                        <input type="text" name="language" class="input-area" value="{{ $request->input('language') }}">
                     </div>
-                    <button type="submit">検索</button>
+                    <button type="submit">検索</button>    
                 </form>
+                @foreach ($items as $item)
+                    <ul>
+                        <li>{{ $item->title }}</li>
+                    </ul>
+                @endforeach
             </section>
         </div>
     </main>
