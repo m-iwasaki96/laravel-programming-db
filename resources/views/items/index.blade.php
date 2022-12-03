@@ -25,91 +25,33 @@
             <aside>
                 <a href="{{ route('items.create') }}" class="btn">登録</a>
                 <a href="{{ route('items.search') }}" class="btn">検索</a>
+                <!-- <a href="{{ route('items.search') }}" class="btn">カテゴリ</a> -->
             </aside>
-            <section id="top-section">
+            <section class="content-section">
             @if (session('flash_message'))
                 <p>{{ session('flash_message') }}</p>
             @endif
+            @foreach ($items as $item)
                 <div class="topics">
-                    <a href="{{ route('categories.show', ['category' => 'html_css']) }}"><h2>HTML/CSS</h2></a> 
                     <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
+                        <p class="title-text">タイトル</p>
+                        <p>{{ $item->title }}</p>
+                        <p class="title-text">内容</p>
+                        <p>{{ $item->content }}</p>
+                        <p class="title-text">参考URL</p>
+                        <a href="{{ $item->url }}" class="url-link">{{ $item->url }}</a>
+                        <div>
+                            <a href="{{ route('items.show', $item) }}" class="button">詳細</a>
+                            <a href="{{ route('items.edit', $item) }}" class="button">編集</a>
+                            <form action="{{ route('items.destroy', $item) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="button">削除</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="topics">
-                    <a href="#"><h2>JavaScript</h2></a>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                </div>
-                <div class="topics">
-                    <a href="#"><h2>PHP</h2></a>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
-                    <div class="contents">
-                        <p class="topic-title">タイトル</p>
-                        <p>ダミーテキスト。</p>
-                        <p class="content-body">内容</p>
-                        <p>親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。</p>
-                        <p class="url">参考URL</p>
-                        <p>https://www.ダミーURL.com</p>
-                    </div>
+            @endforeach
             </section>
         </div>
     </main>

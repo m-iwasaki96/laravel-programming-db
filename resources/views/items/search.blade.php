@@ -44,7 +44,7 @@
                         <input type="text" name="title" class="input-area" value="{{ $request->input('title') }}">
                     </div>
                     <div>
-                        <label for="content">内容</label>
+                        <label for="content" class="form_content">内容</label>
                         <textarea name="content" cols="50" rows="10" class="input-area" value="{{ $request->input('content') }}"></textarea>
                     </div>
                     <div>
@@ -61,11 +61,24 @@
                     </div>
                     <button type="submit">検索</button>    
                 </form>
+                
+                <h2>検索結果</h2>
                 @foreach ($items as $item)
-                    <ul>
-                        <li>{{ $item->title }}</li>
+                    <ul id="search-result-frame">
+                        <h3>タイトル</h3>
+                        <li class="search-result">{{ $item->title }}</li>
+                        <h3>内容</h3>
+                        <li class="search-result">{{ $item->content }}</li>
+                        <h3>参考URL</h3>
+                        <li class="search-result"><a href="{{ $item->url }}" class="url-link">{{ $item->url }}</a></li>
+                        <h3>ユーザーID</h3>
+                        <li class="search-result">{{ $item->user_id }}</li>
+                        <h3>カテゴリ</h3>
+                        <li class="search-result">{{ $item->language }}</li>
                     </ul>
                 @endforeach
+
+                {{ $items->links('vendor.pagination.simple-default') }}
             </section>
         </div>
     </main>

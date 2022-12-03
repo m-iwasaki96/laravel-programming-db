@@ -16,6 +16,16 @@ a {
     text-decoration: none;
     color: black;
 }
+.url-link {
+    text-decoration: underline;
+    color: blue;
+    display: block;
+    margin-bottom: 5px;
+}
+ul {
+    list-style: none;
+    width: 80vw;
+}
 /* ヘッダー */
 #navi {
     display: flex;
@@ -40,6 +50,7 @@ aside {
     width: 10%;
     text-align: center;
     background-color: #404040;
+    min-height: 100vh;
 }
 #main-items {  
     width: 90vw;
@@ -47,9 +58,7 @@ aside {
     justify-content: space-around;
     padding: 16px;
 }
-#top-section {
-    display: flex;
-    justify-content: space-around;
+.content-section {
     padding: 16px;
     width: 90%;
 }
@@ -62,7 +71,7 @@ aside {
     padding: 20px 0px;
     color: white;
 }
-.topic-title, .content-body, .url {
+.title-text {
     font-weight: bold;
 }
 h2 {
@@ -89,6 +98,7 @@ p:not([class]) {
 }
 .button {
     border: 1px solid black;
+    border-radius: 6px;
     padding: 5px;
 }
 
@@ -99,6 +109,50 @@ p:not([class]) {
 }
 .content-aside {
     height: 100vh;
+}
+
+/* 検索ページ */
+.search-result {
+    padding: 3px;
+}
+#search-result-frame {
+    padding: 20px;
+    margin: 30px 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px gray;
+}
+h3 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+.form_content {
+    vertical-align: top;
+}
+textarea {
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.paginate-btn {
+    border: 1px solid black;
+    border-radius: 6px;
+    margin-left: 30px;
+    padding: 5px 10px;
+}
+#first-prev-btn {
+    margin-left: 30px;
+    padding: 5px 10px;
+}
+.paging {
+    text-align: center;
 }
 
 /* ログインフォーム */

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 use App\Models\Item;
+use App\Models\Items;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -16,7 +17,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('items.index');
+        // return view('items.index');
+        $items = Items::latest()->get();
+        return view('/items.index', compact('items'));
     }
 
     // 検索機能の実装
@@ -36,7 +39,7 @@ class ItemController extends Controller
             $item = $item->where('category', $request->input('category'));
         }
 
-        $items = $item->get();
+        $items = $item->simplePaginate(1);
         return view('/items.search', ['items' => $items, 'request' => $request]);
     }
 
