@@ -16,6 +16,10 @@
             </div>
             <div id="user">
                 <a href="#" id="user-name">ユーザー名</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button>ログアウト</button>
+                </form>
             </div>
         </div>
     </header>

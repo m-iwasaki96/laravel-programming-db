@@ -42,10 +42,10 @@ Route::delete('items/{item}', [ItemController::class, 'destroy'])->name('items.d
 Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
 // ログイン画面のルーティング
-Route::get('/login2', [TopController::class, 'index'])->name('login2');
+// Route::get('/login2', [TopController::class, 'index'])->name('login2');
 
 // ユーザー登録画面のルーティング
-Route::get('/register2', [TopController::class, 'register'])->name('register2');
+// Route::get('/register2', [TopController::class, 'register'])->name('register2');
 
 // 検索画面のルーティング
 Route::get('/item-search', [ItemController::class, 'search'])->name('items.search');
