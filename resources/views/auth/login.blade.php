@@ -7,16 +7,15 @@
     <title>LogIn</title>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="{{ asset('/css/style.css')  }}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div id="login">
-
-    </div>
-    <form method="POST" action="{{ route('login') }}">
+    <form class="max-w-xl mx-auto mt-16 bg-white p-10 rounded-md" method="POST" action="{{ route('login') }}">
+        <h1 class="text-3xl text-black text-center font-semibold mb-6">USER LOGIN</h1>
         @csrf
 
         <!-- Email Address -->
-        <div>
+        <div class="">
             <x-input-label for="email" :value="__('Email')" />
 
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
