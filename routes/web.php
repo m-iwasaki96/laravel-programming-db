@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 use Database\Seeders\CategorySeeder;
 
 /*

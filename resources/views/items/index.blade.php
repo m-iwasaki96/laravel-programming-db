@@ -15,7 +15,7 @@
                 <h1><a href="{{ route('items.index') }}">プログラミングDB</a> </h1>
             </div>
             <div id="user">
-                <a href="#" id="user-name">ユーザー名</a>
+                <a href="#" id="user-name">{{ Auth::user()->name }}</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button>ログアウト</button>
